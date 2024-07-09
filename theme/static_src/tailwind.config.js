@@ -57,6 +57,8 @@ module.exports = {
                 "custom-blue": "#123c69",
                 "custom-blue-light": "#3a6aa4",
                 "custom-red": "#ac3b61",
+                "custom-red-light": "#d9a7c7",
+                "custom-green": "#456268",
             },
         },
     },
