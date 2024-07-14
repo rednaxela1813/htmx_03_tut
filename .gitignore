@@ -149,6 +149,10 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
+#other ignores
+cypress.env.json
+
+
 # pytype static type analyzer
 .pytype/
 

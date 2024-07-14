@@ -41,6 +41,10 @@ module.exports = {
          */
          '../../**/*.py'
     ],
+
+    safelist: [ 
+        'bg-green-800' 
+    ], 
     theme: {
         fontFamily: {
             sans: ["Roboto"]
