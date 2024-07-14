@@ -25,13 +25,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 #SECRET_KEY = "django-insecure-1asg0z8j_$x8^=l0b7*b$9-t7(_^x*fco^du%y)rek^2zv4e@7"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+##DEBUG = True
 
 #ALLOWED_HOSTS = []
 
 
 SECRET_KEY = os.environ.get("SECRET_KEY", default="django-insecure-1asg0z8j_$x8^=l0b7*b$9-t7(_^x*fco^du%y)rek^2zv4e@7")
-#DEBUG = int(os.environ.get("DEBUG", default=0))
+DEBUG = int(os.environ.get("DEBUG", default=0))
 ALLOWED_HOSTS = os.environ.get("DJANGO_ALLOWED_HOSTS", default="127.0.0.1 localhost [::1] abracadabrant-mandarine-61331-1a7f5b40fb24.herokuapp.com").split(" ")
 
 CSRF_TRUSTED_ORIGINS = os.environ.get("CSRF_TRUSTED_ORIGINS",  default="http://127.0.0.1:8000 http://localhost:8000").split(" ")
