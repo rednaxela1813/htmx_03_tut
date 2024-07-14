@@ -105,20 +105,13 @@ WSGI_APPLICATION = "core.wsgi.application"
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.postgresql",
-        "NAME": "postgres",
-        "USER": "party_user",
-        "PASSWORD": "party_password",
-        "HOST": "party_db",
-        "PORT": 5432,
-
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": BASE_DIR / "db.sqlite3",
     }
 }
 
-# DATABASES["default"] = dj_database_url.config(default="sqlite:///db.sqlite3")
-DATABASES = {
-    "default": dj_database_url.config(default="sqlite:///db.sqlite3")
-}
+DATABASES["default"] = dj_database_url.config(default="sqlite:///db.sqlite3")
+
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
 
@@ -198,10 +191,3 @@ STORAGES = {
         "BACKEND": "whitenoise.storage.CompressedStaticFilesStorage",
     },
 }
-
-
-SESSION_COOKIE_SECURE = True # ensures cookie is only sent under an HTTPS connection
-CSRF_COOKIE_SECURE = True # ensures CSRF cookie is only sent under an HTTPS connection
-SECURE_HSTS_SECONDS = 604800 # determines how long browsers should remember that your site should only be accessed using HTTPS
-SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https") #  signifies a request is secure despite using proxy
-ACCOUNT_DEFAULT_HTTP_PROTOCOL = "https" # django-allauth's default protocol for generating URLs
