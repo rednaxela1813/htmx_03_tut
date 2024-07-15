@@ -32,7 +32,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = os.environ.get("SECRET_KEY", default="django-insecure-1asg0z8j_$x8^=l0b7*b$9-t7(_^x*fco^du%y)rek^2zv4e@7")
 DEBUG = int(os.environ.get("DEBUG", default=0))
-ALLOWED_HOSTS = os.environ.get("DJANGO_ALLOWED_HOSTS", default="127.0.0.1 localhost [::1] .herokuapp.com abracadabrant-mandarine-61331.herokuapp.com abracadabrant-mandarine-61331-1a7f5b40fb24.herokuapp.com").split(" ")
+ALLOWED_HOSTS = os.environ.get("DJANGO_ALLOWED_HOSTS", default="127.0.0.1 localhost [::1]").split(" ")
 
 CSRF_TRUSTED_ORIGINS = os.environ.get("CSRF_TRUSTED_ORIGINS",  default="http://127.0.0.1:8000 http://localhost:8000").split(" ")
 
@@ -191,3 +191,9 @@ STORAGES = {
         "BACKEND": "whitenoise.storage.CompressedStaticFilesStorage",
     },
 }
+
+SESSION_COOKIE_SECURE = True # ensures cookie is only sent under an HTTPS connection
+CSRF_COOKIE_SECURE = True # ensures CSRF cookie is only sent under an HTTPS connection
+SECURE_HSTS_SECONDS = 604800 # determines how long browsers should remember that your site should only be accessed using HTTPS
+SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https") #  signifies a request is secure despite using proxy
+ACCOUNT_DEFAULT_HTTP_PROTOCOL = "https" # django-allauth's default protocol for generating URLs

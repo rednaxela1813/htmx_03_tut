@@ -13,7 +13,7 @@
     <script type="text/javascript" src="{% static '/party/js/remove-me.js' %}"></script>
     {% tailwind_css %}
 </head>
-<body class="bg-custom-powder-light" hx-headers='{"X-CSRFToken": "{{ csrf_token }}"}'>
+<body class="bg-custom-powder-light" hx-headers='{"X-CSRFToken": "{{ csrf_token }}"}' hx-boost="false">
     <nav class="bg-custom-red">
         <a href="/"
             class="inline-block p-4 text-custom-powder-light font-dancing-script text-2xl"
